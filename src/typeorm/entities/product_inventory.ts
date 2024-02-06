@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Product } from './product';
 
 @Entity({ name: 'product_inventory' })
 export class ProductInventory {
@@ -16,4 +17,5 @@ export class ProductInventory {
 
     @Column()
     deleteAt: Date
+
 }

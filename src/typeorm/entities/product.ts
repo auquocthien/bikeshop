@@ -29,9 +29,8 @@ export class Product {
     @Column()
     deleteAt: Date
 
-    @OneToOne(() => ProductInventory)
-    @JoinColumn()
-    inventory: ProductInventory
+    @Column()
+    quantity: number
 
     @ManyToOne(() => ProductCategory, (category) => category.product)
     category: ProductCategory

@@ -13,6 +13,7 @@ import { ProductInventory } from '../typeorm/entities/product_inventory';
 import { OrderDetail } from '../typeorm/entities/order_detail';
 import { OrderItem } from '../typeorm/entities/order_item';
 import { PaymentDetail } from '../typeorm/entities/payment_detail';
+import { ProductModule } from '../product/product.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -24,7 +25,7 @@ import { PaymentDetail } from '../typeorm/entities/payment_detail';
     database: 'bikeshop',
     entities: [User, Profile, Post, Address, Discount, Product, ProductCategory, ProductInventory, OrderDetail, OrderItem, PaymentDetail],
     synchronize: true
-  }), UsersModule],
+  }), UsersModule, ProductModule],
   controllers: [AppController],
   providers: [AppService]
 })
